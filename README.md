@@ -6,6 +6,8 @@ This project follows the Angular Tour of Heroes tutorial, except I have redone t
 
 Run `npm run dev` for a dev server. Navigate to `http://localhost:5173/`. The application will automatically reload if you change any of the source files.
 
+NOTE: For the version on StackBlitz, I have hard coded dev to preview due to React/Vite duplication of messages in dev.
+
 ## Build
 
 Run `npm run build` to build the project. To see a production version use `npm run preview`
