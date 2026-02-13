@@ -1,0 +1,173 @@
+/* src/App.css */
+.heroes { list-style-type: none; padding: 0; width: 15em; }
+.heroes li { cursor: pointer; position: relative; left: 0; background-color: #EEE; margin: .5em; padding: .3em 0; height: 1.6em; border-radius: 4px; }
+.heroes li:hover { color: #607D8B; background-color: #DDD; left: .1em; }
+.heroes li.selected { background-color: #CFD8DC; color: white; }
+.heroes li.selected:hover { background-color: #BBD8DC; color: white; }
+.heroes .badge { display: inline-block; font-size: small; color: white; padding: 0.8em 0.7em 0 0.7em; background-color: #405061; line-height: 1em; position: relative; left: -1px; top: -4px; height: 1.8em; margin-right: .8em; border-radius: 4px 0 0 4px; }
+
+/* App Navigation Styling */
+h1 { color: #369; font-family: Arial, Helvetica, sans-serif; font-size: 250%; }
+h2, h3 { color: #444; font-family: Arial, Helvetica, sans-serif; font-weight: lighter; }
+
+.app-container nav a {
+  margin-right: 5px;
+}
+
+nav a {
+  padding: 1rem;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
+}
+
+nav a:hover { color: white; background-color: #42545C; }
+nav a.active { background-color: black; color: white; }
+
+/* Dashboard Grid Styling */
+.grid { margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: space-around; }
+.col-1-4 {
+  flex: 0 0 20%;
+  padding: 20px;
+  background-color: #3f525c;
+  border-radius: 2px;
+  text-decoration: none;
+  color: #eee;
+  text-align: center;
+  cursor: pointer;
+  margin: 10px;
+}
+.col-1-4:hover { background-color: #eee; color: #3f525c; }
+
+/* HeroSearch styling */
+#search-box {
+  width: 200px;
+  height: 20px;
+}
+.search-result li {
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  width: 195px;
+  height: 20px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+  list-style-type: none;
+}
+.search-result li:hover { background-color: #607D8B; }
+.search-result li a { color: #888; display: block; text-decoration: none; }
+.search-result li a:hover { color: white; }
+.search-result li a:active { color: white; }
+
+/* Heroes List Container */
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.heroes li {
+  position: relative;
+  cursor: pointer;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.heroes li:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+  left: .1em;
+}
+
+.heroes li a {
+  color: #333;
+  text-decoration: none;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* The ID Badge */
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: 0;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+/* Add Hero Input Area */
+.add-hero-area {
+  margin-bottom: 20px;
+}
+
+.add-hero-area input {
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Buttons */
+button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+/* The Delete Button (The 'x') */
+button.delete {
+  background-color: #3f525c;
+  color: white;
+  padding: 2px 8px;
+  margin-right: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+button.delete:hover {
+  background-color: #000;
+  color: white;
+}
+
+/* Messages */
+.messages-container { color: #666; font-family: Arial, Helvetica, sans-serif; }
+.clear { color: #333; background-color: #eee; margin-bottom: 12px; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+
+/* Delete button on list */
+button.delete {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: gray;
+  color: white;
+  padding: 8px 10px;
+  border: none;
+  cursor: pointer;
+}
+button.delete:hover { background-color: #525252; }
