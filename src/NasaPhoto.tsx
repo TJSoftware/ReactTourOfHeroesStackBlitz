@@ -1,5 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useMessages } from './MessageContext';
+import { ApodDateSearch } from './ApodDateSearch';
+import { ApodMediaViewer } from './ApodMediaViewer';
 
 // In a real world application, you would want to store your API key in an environment variable or a secure vault, not hard-coded in your source code. For demonstration purposes, it's included here directly.
 const NASA_API_KEY = 'QdKv9PuSMawK6XR5ZVsMEUcaI0ewfgjlFzqaSwQ6';
@@ -47,27 +49,18 @@ export default function NasaPhoto() {
   if (!photoData) return <div>Loading photo...</div>;
 
   return (
-    <div className="nasa-container" style={{ marginTop: '20px', borderTop: '2px solid #eee' }}>
-      {processedMetadata && (
-        <div>
-          <p><span>Read Time: {processedMetadata.readTimeMinutes} min</span></p>
-          <p><span>Word Count: {processedMetadata.wordCount}</span></p>
-          <p>
-            <span>
-              Keywords:{' '}
-              {processedMetadata.detectedKeywords.length > 0
-                ? processedMetadata.detectedKeywords.join(' | ')
-                : 'None'}
-            </span>
-          </p>
-        </div>
-      )}
-      <h1>NASA Astronomy Picture of the Day</h1>
-      <p>Because I enjoy looking at pictures related to space, this is the first public example that I am doing with this website.</p>
-      <h5>Credit <a href="https://api.nasa.gov/" target="_blank">NASA</a></h5>
+    <div>
       <h1>{photoData.title}</h1>
-      <img src={photoData.url} alt={photoData.title} style={{ maxWidth: '100%', borderRadius: '8px' }} />
-      <p style={{ fontSize: '0.9em', color: '#666' }}>{photoData.explanation}</p>
+
+      <ApodMediaViewer
+        url={photoData.url}
+        title={photoData.title}
+        mediaType={photoData.media_type}
+      />
+
+      <p>{photoData.explanation}</p>
+      
+      <ApodDateSearch />
     </div>
   );
 }
