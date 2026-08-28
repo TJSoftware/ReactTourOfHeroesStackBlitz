@@ -51,6 +51,20 @@ export default function NasaPhoto() {
   return (
     <div>
       <h1>{photoData.title}</h1>
+      {processedMetadata && (
+        <div>
+          <p><span>Read Time: {processedMetadata.readTimeMinutes} min</span></p>
+          <p><span>Word Count: {processedMetadata.wordCount}</span></p>
+          <p>
+            <span>
+              Keywords:{' '}
+              {processedMetadata.detectedKeywords.length > 0
+                ? processedMetadata.detectedKeywords.join(' | ')
+                : 'None'}
+            </span>
+          </p>
+        </div>
+      )}
 
       <ApodMediaViewer
         url={photoData.url}
@@ -59,7 +73,7 @@ export default function NasaPhoto() {
       />
 
       <p>{photoData.explanation}</p>
-      
+
       <ApodDateSearch />
     </div>
   );
