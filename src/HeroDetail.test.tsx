@@ -6,7 +6,7 @@ import { AppProvider } from './AppContext';
 import HeroDetail from './HeroDetail';
 
 describe('HeroDetail Component', () => {
-  const renderDetail = (id) => render(
+  const renderDetail = (id: string | number) => render(
     <MemoryRouter initialEntries={[`/detail/${id}`]}>
       <MessageProvider>
         <AppProvider>
@@ -37,7 +37,7 @@ describe('HeroDetail Component', () => {
 
   it('updates the name and triggers save logic', async () => {
     renderDetail(12);
-    const input = await screen.findByRole('textbox');
+    const input = await screen.findByRole('textbox') as HTMLInputElement;
     
     fireEvent.change(input, { target: { value: 'New Narco' } });
     expect(input.value).toBe('New Narco');

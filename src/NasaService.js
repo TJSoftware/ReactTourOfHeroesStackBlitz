@@ -1,3 +1,4 @@
+// In a real-world application, you would typically store the API key in an environment variable for security reasons.
 const NASA_API_KEY = 'QdKv9PuSMawK6XR5ZVsMEUcaI0ewfgjlFzqaSwQ6';
 const BASE_URL = 'https://api.nasa.gov/planetary/apod';
 

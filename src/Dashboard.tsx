@@ -6,7 +6,7 @@ import HeroSearch from './HeroSearch';
 
 export default function Dashboard() {
   const { heroes } = useApp();
-  const { add } = useMessages();
+  const { add } = useMessages() as { add: (msg: string) => void };
 
   // Get the 2nd through 5th heroes
   const topHeroes = heroes.slice(1, 5);

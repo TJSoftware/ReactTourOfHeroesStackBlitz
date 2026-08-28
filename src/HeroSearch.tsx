@@ -5,9 +5,12 @@ import { useMessages } from './MessageContext';
 
 export default function HeroSearch() {
   const [term, setTerm] = useState('');
-  const [results, setResults] = useState([]);
+  // Define a minimal Hero type so results state can be typed correctly
+  type Hero = { id: number | string; name: string };
+  const [results, setResults] = useState<Hero[]>([]);
   const { heroes } = useApp(); // Access the global list
-  const { add } = useMessages();
+  // useMessages may be untyped; assert shape for TS
+  const { add } = useMessages() as { add: (msg: string) => void };
 
   // Create a "memory" of the last term we actually logged
   const lastLoggedTerm = useRef('');

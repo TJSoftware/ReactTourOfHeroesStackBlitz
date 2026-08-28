@@ -8,4 +8,10 @@ export default defineConfig({
     environment: 'jsdom', // Simulates a browser in Node.js
     setupFiles: './src/setupTests.js', // Where we put the "expect" extensions
   },
+  css: {
+    devSourcemap: true, // Enables CSS source maps during development
+    modules: {
+      localsConvention: 'camelCaseOnly', // Converts class names for CSS Modules (e.g. .app-header -> styles.appHeader)
+    },
+  },
 })

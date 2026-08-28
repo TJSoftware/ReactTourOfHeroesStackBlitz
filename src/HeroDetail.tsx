@@ -3,13 +3,18 @@ import { useState, useEffect } from 'react';
 import { useApp } from './AppContext';
 import { useMessages } from './MessageContext';
 
+type Hero = {
+  id: number;
+  name: string;
+};
+
 export default function HeroDetail() {
   const { heroId } = useParams();
   const navigate = useNavigate();
   const { heroes, updateHero } = useApp();
-  const { add } = useMessages();
-  
-  const [hero, setHero] = useState(null);
+  const { add } = useMessages() as { add: (message: string) => void };
+
+  const [hero, setHero] = useState<Hero | null>(null);
 
   useEffect(() => {
     const foundHero = heroes.find(h => h.id === Number(heroId));
@@ -26,6 +31,7 @@ export default function HeroDetail() {
   }, [heroId]); 
 
   const handleSave = () => {
+    if (!hero) return;
     updateHero(hero);
     navigate(-1);
   };

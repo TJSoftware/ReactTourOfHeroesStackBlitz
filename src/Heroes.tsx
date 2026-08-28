@@ -5,7 +5,7 @@ import { useMessages } from './MessageContext';
 
 export default function Heroes() {
   const { heroes, addHero, deleteHero } = useApp();
-  const { add } = useMessages();
+  const { add } = useMessages() as { add: (message: string) => void };
   const [newHeroName, setNewHeroName] = useState('');
 
   useEffect(() => {

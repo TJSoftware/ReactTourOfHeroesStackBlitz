@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
+import type { ReactElement } from 'react';
 import { MemoryRouter } from 'react-router-dom'; // Add this
 import { MessageProvider } from './MessageContext';
 import { AppProvider } from './AppContext';
@@ -7,7 +8,7 @@ import Heroes from './Heroes';
 
 describe('Heroes Component', () => {
   // Helper to wrap component with all necessary providers
-  const renderWithProviders = (ui) => {
+  const renderWithProviders = (ui: ReactElement) => {
     return render(
       <MemoryRouter>
         <MessageProvider>

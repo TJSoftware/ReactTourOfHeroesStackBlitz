@@ -4,11 +4,12 @@ import NasaPhoto from './NasaPhoto';
 import { MessageProvider } from './MessageContext';
 
 // Mock the global fetch
-global.fetch = vi.fn();
+const mockedFetch = vi.fn();
+global.fetch = mockedFetch as unknown as typeof fetch;
 
 describe('NasaPhoto Component', () => {
   it('renders loading state then the photo title', async () => {
-    fetch.mockResolvedValueOnce({
+    mockedFetch.mockResolvedValueOnce({
       ok: true,
       json: async () => ({
         title: 'Starry Night',
