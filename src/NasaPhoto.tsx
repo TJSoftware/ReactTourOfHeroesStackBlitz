@@ -5,7 +5,7 @@ import { ApodMediaViewer } from './ApodMediaViewer';
 
 // In a real world application, you would want to store your API key in an environment variable or a secure vault, not hard-coded in your source code. For demonstration purposes, it's included here directly.
 const NASA_API_KEY = 'QdKv9PuSMawK6XR5ZVsMEUcaI0ewfgjlFzqaSwQ6';
-const BASE_URL = 'https://api.nasa.gov/planetary/apod';
+const BASE_URL = 'https://science.nasa.gov/wp-json/wp/v2/apod-basic';
 
 type NasaPhotoData = {
   url: string;
